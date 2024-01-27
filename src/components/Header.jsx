@@ -25,7 +25,7 @@ const Header = () => {
       {/*Header*/}
       <header
         id="header"
-        className="py-1 flex justify-between px-10 md:px-20 border-b-2 border-t-4 border-t-yellow-500"
+        className="py-1 flex justify-between px-4 md:px-20 border-b-2 border-t-4 border-t-yellow-500"
       >
         <NavLink to="/">
           <img src="/e-commerce.png" alt="Logo" width={70} />

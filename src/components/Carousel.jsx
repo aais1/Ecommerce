@@ -23,7 +23,7 @@ const Carousel = () => {
 
   return (
     <div className='py-6 overflow-hidden'>
-      <div className='swiper-container w-[95vw] md:w-[65vw] mx-auto h-[65vh]'>
+      <div className='swiper-container w-[95vw] md:w-[65vw] mx-auto h-[50vh] md:h-[65vh]'>
         <div className='swiper-wrapper'>
           <div className='swiper-slide'>
             <Link to="/women">
