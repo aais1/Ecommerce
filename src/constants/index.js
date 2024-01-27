@@ -16,7 +16,12 @@ export const NAVIGATION=[
             "text": "Children"
         },
         {
-            "path": "/aboutus",
+            "path": "/login",
             "text": "Login"
+        },
+        {
+            "path": "/register",
+            "text": "Register"
         }
     ]
+    
