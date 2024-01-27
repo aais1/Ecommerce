@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Route, createBrowserRouter , createRoutesFromElements ,RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
-import {Login,Register,Home} from './pages'
+import {Login,Register,Home,Error404} from './pages'
 import { Provider } from 'react-redux'
 import store from './store'
 
@@ -13,6 +13,7 @@ const router=createBrowserRouter(
       <Route path='/' element={<Home/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
+      <Route path='*' element={<Error404/>}/>
     </Route>
   )
 )
