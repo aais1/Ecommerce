@@ -26,7 +26,7 @@ const Home = () => {
     <div className='text-center mt-3 text-2xl font-bold italic border-b border-t py-2'>Some Catalogs :</div>
       <Carousel/>
     <div className="flex">
-    <h1 className="w-[80%] mx-auto mt-4 text-2xl italic font-bold border-t pt-8">Popular Items in Store :</h1>
+    <h1 className="w-[90vw] mx-auto mt-4 text-2xl italic font-bold border-t pt-8">Popular Items in Store :</h1>
     </div>
     {   
         data.length > 0 ?

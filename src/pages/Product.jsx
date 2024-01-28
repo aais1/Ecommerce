@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Loader } from '../components';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import FallbackImage from '../assets/fallback/fallback.png'
 
 const Product = () => {
   const [data, setData] = useState({});
@@ -68,7 +69,11 @@ const Product = () => {
               data.images.map((image)=>{
                    return (
                     <div className='w-[200px] h-[250] md:w-[280px] md:h-[300px] rounded-md mt-6 overflow-hidden' key={image}>
-                    <img  src={image} className='w-[100%] h-[100%] rounded-md overflow-hidden duration-200 hover:scale-110' alt={data.title} />
+                    <img  src={image} className='w-[100%] h-[100%] rounded-md overflow-hidden duration-200 hover:scale-110'
+                    onError={(e)=>{
+                      e.target.src=FallbackImage
+                    }}
+                    alt={data.title} />
                     </div>
                   )
               })
