@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {Item,Container, Loader} from '../components'
+import { Item, Container, Loader } from "../components";
 import { FaCartShopping } from "react-icons/fa6";
 
-import Carousel from '../components/Carousel'
+import Carousel from "../components/Carousel";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const resp = await fetch('https://api.escuelajs.co/api/v1/products');
+        const resp = await fetch("https://api.escuelajs.co/api/v1/products");
         const jsonData = await resp.json();
         console.log(jsonData);
         setData(jsonData);
@@ -23,25 +23,23 @@ const Home = () => {
   }, []);
   return (
     <>
-    <div className='text-center mt-3 text-2xl font-bold italic border-b border-t py-2'>Some Catalogs :</div>
-      <Carousel/>
-    <div className="flex">
-    <h1 className="w-[90vw] mx-auto mt-4 text-2xl italic font-bold border-t pt-8">Popular Items in Store :</h1>
-    </div>
-    {   
-        data.length > 0 ?
+      <Carousel />
+      <div className="flex">
+        <h1 className="w-[90vw] mx-auto mt-4 text-2xl italic font-bold border-t pt-8">
+          Popular Items in Store :
+        </h1>
+      </div>
+      {data.length > 0 ? (
         <Container>
-        {
-        data.map((item)=>{
-            return <Item key={item.id} {...item} />
-        })
-        }
+          {data.map((item) => {
+            return <Item key={item.id} {...item} />;
+          })}
         </Container>
-        :
-        <Loader/>
-    }
+      ) : (
+        <Loader />
+      )}
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
