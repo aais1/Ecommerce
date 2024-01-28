@@ -22,32 +22,32 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className='py-6 overflow-hidden'>
+    <div className='py-10 bg-yellow-500 overflow-hidden'>
       <div className='swiper-container w-[95vw] md:w-[65vw] mx-auto h-[50vh] md:h-[65vh]'>
         <div className='swiper-wrapper'>
           <div className='swiper-slide'>
             <Link to="/women">
-            <img src={Image1} className='w-full h-full object-fit ' alt="Pic1" />
+            <img src={Image1} className='w-full h-full object-fit rounded-lg rounded-lg' alt="Pic1" />
             </Link>
           </div>
           <div className='swiper-slide'>
             <Link to="/men">
-            <img src={Image2} className='w-full h-full object-fit' alt="Pic2" />
+            <img src={Image2} className='w-full h-full object-fit rounded-lg' alt="Pic2" />
             </Link>
           </div>
           <div className='swiper-slide'>
             <Link to="/children">
-            <img src={Image3} className='w-full h-full object-fit' alt="Pic3" />
+            <img src={Image3} className='w-full h-full object-fit rounded-lg' alt="Pic3" />
             </Link>
           </div>
           <div className='swiper-slide'>
             <Link to="women">
-            <img src={Image4} className='w-full h-full object-fit' alt="Pic3" />
+            <img src={Image4} className='w-full h-full object-fit rounded-lg' alt="Pic3" />
             </Link>
           </div>
           <div className='swiper-slide'>
             <Link to="men">
-            <img src={Image5} className='w-full h-full object-fit' alt="Pic3" />
+            <img src={Image5} className='w-full h-full object-fit rounded-lg' alt="Pic3" />
             </Link>
           </div>
         </div>

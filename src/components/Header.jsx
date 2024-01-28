@@ -71,7 +71,7 @@ const Header = () => {
               showMenu ? `translate-x-[0px]` : `translate-x-[-400px]`
               } h-[100vh] w-[50vw] transition-transform duration-100 bg-gray-700`}
           >
-              <div className="flex flex-col items-center  gap-y-7 h-[100%] mt-10">
+              <div className="flex flex-col items-center  gap-y-5 h-[100%] mt-7">
               <NavLink to="/">
                 <img src="/e-commerce.png" alt="Logo" width={62} />
               </NavLink>
@@ -81,7 +81,7 @@ const Header = () => {
                       key={item.text}
                       to={item.path}
                       onClick={()=>setShowMenu(!showMenu)}
-                      className="p-3 border-b  text-center w-[120px] mx-auto text-white no-underline hover:text-yellow-500 hover:scale-110 duration-150"
+                      className="p-3 text-center w-[120px] mx-auto text-white no-underline hover:text-yellow-500 hover:scale-110 duration-150"
                     >
                       {item.text}
                     </NavLink>
