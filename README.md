@@ -32,7 +32,7 @@ Make sure you have Node.js and npm installed on your machine.
 
   2. **Building the Project**
    ```bash
-   npm install
+   npm build
    ```
    
   3. **Code Formating**
