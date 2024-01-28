@@ -1,10 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { NavLink ,useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import {NAVIGATION} from '../constants'
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
+import { IoCartSharp } from "react-icons/io5";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const location = useLocation();
+  const restrictedPages = ['login', 'register'];
+  const isRestrictedPage = restrictedPages.some((page) =>
+    location.pathname.includes(page)
+  );
 
   window.addEventListener("scroll", () => {
     setShowMenu(false);
@@ -41,26 +49,92 @@ const Header = () => {
           />
           }
         </div>
- 
           <div className="hidden items-center gap-x-4 md:flex ">
-            {
-              NAVIGATION.map((item) => (
-                <NavLink
-                  key={item.text}
-                  to={item.path}
+          <NavLink
+                  to="/"
                   className={({isActive})=>{
                     return isActive ? 'border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500' : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150"
-                  }}
-                  onClick={() => {
-                    setShowMenu(false);
-                  }}
+                  }
+                }
                 >
-                  {item.text}
+                  Home
+                </NavLink> 
+
+                <NavLink
+                  to="/men"
+                  className={({isActive})=>{
+                    return isActive ? 'border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500' : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150"
+                  }
+                }
+                >
+                  Men
                 </NavLink>
-              ))
-            }
+
+                <NavLink
+                  to="/women"
+                  className={({isActive})=>{
+                    return isActive ? 'border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500' : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150"
+                  }
+                }
+                >
+                  Women
+                </NavLink>
+
+                <NavLink
+                  to="/children"
+                  className={({isActive})=>{
+                    return isActive ? 'border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500' : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150"
+                  }
+                }
+                >
+                  Children
+                </NavLink>
+
+                <NavLink
+                  to="/login"
+                  className={({isActive})=>{
+                    return isActive ? 'border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500' : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150"
+                  }
+                }
+              
+                >
+                  Login
+                </NavLink>
+
+                <NavLink
+                  to="/register"
+                  className={({isActive})=>{
+                    return isActive ? 'border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500' : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150"
+                  }
+                }
+                >
+                  Register
+                </NavLink>
           </div>
       </header>
+      
+      {/*Cart and search*/}
+      
+      {
+       isRestrictedPage  ? '' :
+      <div>
+       <div className="w-[100%] bg-gray-700">
+        <div className="hidden w-[90vw] mx-auto md:flex justify-between items-center gap-x-16 py-1 px-2 ">
+          <div>
+            <button className="px-2 py-1 border rounded-md text-white font-bold hover:bg-white hover:text-black duration-150"
+            >Contact Support</button>
+          </div>
+          <div className="flex items-center">
+            <input type="text" placeholder="Search.." className="px-2 py-1 focus:outline-none"/>
+            <HiOutlineMagnifyingGlass
+              style={{fontSize:'2rem',backgroundColor:'white',padding:'2px',cursor:'pointer'}} />
+            <IoCartSharp
+            style={{fontSize:'3rem',color:'white',padding:'2px',cursor:'pointer',marginLeft:'30px'}}/>
+          </div>
+        </div>
+      </div>
+     </div>
+       }
 
       {/* for responsive */}
 
