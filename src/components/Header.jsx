@@ -131,18 +131,19 @@ const Header = () => {
           <div className="w-[100%] bg-gray-700">
             <div className="w-[90vw] mx-auto flex justify-between items-center  md:gap-x-16 py-1 px-2 ">
               <div>
-                <button className="hidden md:block md:px-2 md:py-1 border rounded-md text-white font-bold hover:bg-white hover:text-black duration-150">
+                <button className="block px-2 py-1 border rounded-md text-white font-bold hover:bg-white hover:text-black duration-150">
                   Contact Support
                 </button>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center ">
                 <input
                   type="text"
                   placeholder="Search.."
-                  className="px-2 py-1 focus:outline-none"
+                  className="px-2 py-1 focus:outline-none hidden md:block"
                 />
-                <div></div>
+
                 <HiOutlineMagnifyingGlass
+                className="hidden md:block"
                   style={{
                     fontSize: "2rem",
                     backgroundColor: "white",

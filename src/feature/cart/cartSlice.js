@@ -61,6 +61,12 @@ const cartSlice = createSlice({
         total = total + item.price * item.quantity;
       });
       state.totalAmount = total;
+    },
+    removeItemFromCart(state,action){
+      const id=action.payload.id;
+      const removeIndex = state.items.findIndex((item) => item.id === id);
+        state.items.splice(removeIndex,1);
+        state.totalQuantity=state.totalQuantity-1;
     }
   }
 });
@@ -71,6 +77,7 @@ export const {
   incrementItemQuantity,
   decrementItemQuantity,
   calculateTotalAmount,
+  removeItemFromCart
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
