@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect} from "react";
 import { Item, Container, Loader } from "../components";
-import { FaCartShopping } from "react-icons/fa6";
-
+import { useDispatch , useSelector } from "react-redux";
+import {fetchProducts} from "../feature/product/productSlice";
 import Carousel from "../components/Carousel";
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const {items} = useSelector(state => state.product);
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const resp = await fetch("https://api.escuelajs.co/api/v1/products");
-        const jsonData = await resp.json();
-        console.log(jsonData);
-        setData(jsonData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    getData();
-  }, []);
+    dispatch(fetchProducts())
+  }, [dispatch]);
   return (
     <>
       <Carousel />
@@ -29,9 +19,9 @@ const Home = () => {
           Popular Items in Store :
         </h1>
       </div>
-      {data.length > 0 ? (
+      {items.length > 0 ? (
         <Container>
-          {data.map((item) => {
+          {items.map((item) => {
             return <Item key={item.id} {...item} />;
           })}
         </Container>

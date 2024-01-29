@@ -6,5 +6,6 @@ import Men from "./Men";
 import Product from "./Product";
 import Women from "./Women";
 import Children from "./Children";
+import Cart from "./Cart";
 
-export { Login, Register, Home, Error404, Men, Product, Women, Children };
+export { Login, Register, Home, Error404, Men, Product, Women, Children ,Cart };

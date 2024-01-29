@@ -17,6 +17,7 @@ import {
   Product,
   Women,
   Children,
+  Cart,
 } from "./pages";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path="/men" element={<Men />} />
       <Route path="/women" element={<Women />} />
       <Route path="/children" element={<Children />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<Error404 />} />

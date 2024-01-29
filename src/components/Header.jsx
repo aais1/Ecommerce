@@ -1,14 +1,18 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation,useNavigate } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { NAVIGATION } from "../constants";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { IoCartSharp } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { totalQuantity } = useSelector((state) => state.cart);
 
   const location = useLocation();
+  const navigate=useNavigate();
+
   const restrictedPages = ["login", "register"];
   const isRestrictedPage = restrictedPages.some((page) =>
     location.pathname.includes(page)
@@ -125,9 +129,9 @@ const Header = () => {
       ) : (
         <div>
           <div className="w-[100%] bg-gray-700">
-            <div className="hidden w-[90vw] mx-auto md:flex justify-between items-center gap-x-16 py-1 px-2 ">
+            <div className="w-[90vw] mx-auto flex justify-between items-center  md:gap-x-16 py-1 px-2 ">
               <div>
-                <button className="px-2 py-1 border rounded-md text-white font-bold hover:bg-white hover:text-black duration-150">
+                <button className="hidden md:block md:px-2 md:py-1 border rounded-md text-white font-bold hover:bg-white hover:text-black duration-150">
                   Contact Support
                 </button>
               </div>
@@ -137,6 +141,7 @@ const Header = () => {
                   placeholder="Search.."
                   className="px-2 py-1 focus:outline-none"
                 />
+                <div></div>
                 <HiOutlineMagnifyingGlass
                   style={{
                     fontSize: "2rem",
@@ -145,6 +150,9 @@ const Header = () => {
                     cursor: "pointer",
                   }}
                 />
+                <span
+                 className="bg-green-500 text-white relative left-20 -top-3 rounded-full px-2"
+                >{totalQuantity}</span>
                 <IoCartSharp
                   style={{
                     fontSize: "3rem",
@@ -153,6 +161,7 @@ const Header = () => {
                     cursor: "pointer",
                     marginLeft: "30px",
                   }}
+                  onClick={()=>navigate("/cart")}
                 />
               </div>
             </div>
