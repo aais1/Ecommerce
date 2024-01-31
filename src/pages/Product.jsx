@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import FallbackImage from "../assets/fallback/fallback.png";
@@ -7,6 +9,10 @@ import { addItemToCart } from "../feature/cart/cartSlice";
 import useFetch from "../hooks/useFetch";
 
 const Product = () => {
+
+  const notify = () => toast("✅ Added Succesfully");
+
+
   const id = useParams().id;
   const dispatch = useDispatch();
 
@@ -46,6 +52,19 @@ const Product = () => {
 
   return (
     <div className="md:border-y md:p-12 w-[90vw] mx-auto my-8  min-h-[400px]">
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+        transition: Bounce
+        />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <div className=" flex flex-col">
           <span className="font-bold text-xl md:text-3xl mb-5 p-2 ">
@@ -57,7 +76,10 @@ const Product = () => {
           <h3 className="text-md p-2 ">{data.description}</h3>
           <button
           className=" w-[50%] mx-auto text-sm md:text-md md:px-2 py-2 my-4 border border-green-500 text-green-500 hover:bg-green-500 duration-75 hover:text-white"
-          onClick={()=>dispatch(addItemToCart(data))}
+          onClick={()=>{
+            dispatch(addItemToCart(data))
+            notify()
+          }}
         >
           Add To Cart
         </button>

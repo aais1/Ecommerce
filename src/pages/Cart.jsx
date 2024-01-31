@@ -1,8 +1,12 @@
 import { useEffect } from 'react'
 import { useSelector , useDispatch } from 'react-redux'
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import { incrementItemQuantity , decrementItemQuantity , calculateTotalAmount ,removeItemFromCart } from '../feature/cart/cartSlice'
 
 const Cart = () => {
+
+  const notify = () => toast("🚮 Removed Succesfully");
 
   const dispatch = useDispatch()
   const {items , totalAmount } = useSelector(state => state.cart)
@@ -37,6 +41,7 @@ const Cart = () => {
                 <button className='text-4xl font-bold text-black'
                 onClick={()=>{
                   dispatch(decrementItemQuantity(item.id))
+                  notify()
                 }}
                 >-</button>
 
@@ -49,8 +54,23 @@ const Cart = () => {
                 >+</button>
                 </div>
                 <button className='px-2 py-[2px] border border-red-500 text-red-500 hover:text-white hover:bg-red-500 font-bold rounded-md'
-                onClick={()=>dispatch(removeItemFromCart(item))}>Clear</button>
+                onClick={()=>{
+                  dispatch(removeItemFromCart(item))
+                }}>Clear</button>
               </div>
+              <ToastContainer
+                position="top-left"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover={false}
+                theme="dark"
+                transition: Bounce
+                />
             </div>
           )
         
