@@ -26,7 +26,7 @@ const Header = () => {
     <>
       {/*Overlay to create glass effect*/}
       <div
-        className={`md:hidden  absolute h-[100vh] w-[100%] ${
+        className={`md:hidden  absolute h-[100vh] w-[100%] z-50 ${
           showMenu ? `bg-white bg-opacity-10 backdrop-blur-[2px] ` : `hidden`
         }`}
         onClick={() => {
@@ -152,7 +152,7 @@ const Header = () => {
                   }}
                 />
                 <span
-                 className="bg-green-500 text-white relative left-20 -top-3 rounded-full px-2"
+                 className="bg-green-500 text-white relative left-20 -top-3 rounded-full px-2 z-0"
                 >{totalQuantity}</span>
                 <IoCartSharp
                   style={{

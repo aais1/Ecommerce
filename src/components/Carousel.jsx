@@ -18,7 +18,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="py-10 bg-yellow-500 overflow-hidden">
+    <div className="py-10 -z-50 bg-yellow-500 overflow-hidden relative">
       <div className="swiper-container w-[95vw] md:w-[65vw] mx-auto h-[50vh] md:h-[65vh]">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
