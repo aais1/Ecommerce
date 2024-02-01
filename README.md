@@ -32,15 +32,14 @@ Make sure you have Node.js and npm installed on your machine.
 
   2. **Building the Project**
    ```bash
-   npm build
+   npm run build
    ```
 
-
-
-   ## Completed!
   3. **Code Formating**
    ```bash
-   npm install
+   npm run format
    ```
 
   **Just Learning React 😀**
+
+ 
