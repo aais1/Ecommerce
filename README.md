@@ -13,11 +13,11 @@ Make sure you have Node.js and npm installed on your machine.
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/aais1/Ecommerce
 
 2. **Navigate to Project Directory:**
    ```bash
-   cd your-repo
+   cd Ecommerce
 
 3. **Install Dependencies:**
    ```bash
@@ -27,14 +27,17 @@ Make sure you have Node.js and npm installed on your machine.
 
   1. **Development Mode:**
    ```bash
-   npm install
+   npm run dev
    ```
 
   2. **Building the Project**
    ```bash
    npm build
    ```
-   
+
+
+
+   ## Completed!
   3. **Code Formating**
    ```bash
    npm install
