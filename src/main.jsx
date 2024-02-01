@@ -13,10 +13,10 @@ import {
   Register,
   Home,
   Error404,
-  Men,
+  Clothes,
   Product,
-  Women,
-  Children,
+  Electronics,
+  Furniture,
   Cart,
 } from "./pages";
 import { Provider } from "react-redux";
@@ -27,9 +27,9 @@ const router = createBrowserRouter(
     <Route path="" element={<Layout />}>
       <Route path="/" element={<Home />} />
       <Route path="/product/:id" element={<Product />} />
-      <Route path="/men" element={<Men />} />
-      <Route path="/women" element={<Women />} />
-      <Route path="/children" element={<Children />} />
+      <Route path="/clothes" element={<Clothes />} />
+      <Route path="/electronics" element={<Electronics />} />
+      <Route path="/furniture" element={<Furniture />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

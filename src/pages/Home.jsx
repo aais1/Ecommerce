@@ -14,11 +14,6 @@ const Home = () => {
   return (
     <>
       <Carousel />
-      <div className="flex">
-        <h1 className="w-[90vw] mx-auto mt-4 text-2xl italic font-bold border-t pt-8">
-          Popular Items in Store :
-        </h1>
-      </div>
       {items.length > 0 ? (
         <Container>
           {items.map((item) => {

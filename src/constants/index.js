@@ -4,16 +4,16 @@ export const NAVIGATION = [
       text: "Home",
     },
     {
-      path: "/men",
-      text: "Men",
+      path: "/clothes",
+      text: "Clothes",
     },
     {
-      path: "/women",
-      text: "Women",
+      path: "/electronics",
+      text: "Electronics",
     },
     {
-      path: "/children",
-      text: "Children",
+      path: "/furniture",
+      text: "Furniture",
     },
     {
       path: "/login",

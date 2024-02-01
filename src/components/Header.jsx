@@ -37,7 +37,7 @@ const Header = () => {
       {/*Header*/}
       <header
         id="header"
-        className="py-1 flex justify-between px-4 md:px-20 border-b-2 border-t-4 border-t-yellow-500"
+        className="py-1 px-4 flex justify-between md:px-10 border-b-2 border-t-4 border-t-yellow-500"
       >
         <NavLink to="/">
           <img src="/e-commerce.png" alt="Logo" width={70} />
@@ -53,7 +53,7 @@ const Header = () => {
             />
           }
         </div>
-        <div className="hidden items-center gap-x-4 md:flex ">
+        <div className="hidden justify-between items-center gap-x-10 md:flex ">
           <NavLink
             to="/"
             className={({ isActive }) => {
@@ -66,36 +66,36 @@ const Header = () => {
           </NavLink>
 
           <NavLink
-            to="/men"
+            to="/clothes"
             className={({ isActive }) => {
               return isActive
                 ? "border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500"
                 : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150";
             }}
           >
-            Men
+            Clothes
           </NavLink>
 
           <NavLink
-            to="/women"
+            to="/electronics"
             className={({ isActive }) => {
               return isActive
                 ? "border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500"
                 : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150";
             }}
           >
-            Women
+            Electronics
           </NavLink>
 
           <NavLink
-            to="/children"
+            to="/furniture"
             className={({ isActive }) => {
               return isActive
                 ? "border-b-4 md:w-[65px] text-center block p-1 font-bold border-yellow-500 text-yellow-500"
                 : "inline-block p-1  text-center md:w-[60px] text-black no-underline hover:text-yellow-500 hover:scale-110 duration-150";
             }}
           >
-            Children
+            Furniture
           </NavLink>
 
           <NavLink
